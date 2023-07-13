@@ -1,0 +1,55 @@
+.sidebar {
+    height: 100vh;
+    display: flex;
+    p {
+        color: red;
+    }
+}
+img {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    padding: 8px;
+}
+
+// 左側のサイドバー
+.sidebar_left {
+    width: 80px;
+    background-color: #202225;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .server_icon {
+        margin-top: 12px;
+        background-color: gray;
+        border-radius: 999px;
+        width: 80%;
+    }
+}
+
+// 右側のサイドバー
+.sidebar_right {
+    width: 300px;
+    background-color: #303137;
+    .contents_box {
+        color: rgb(164, 164, 164);
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.85rem;
+        .contents_title {
+            background-color: #303137;
+            color: rgb(164, 164, 164);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            cursor: pointer;
+        }
+        svg:nth-child(1) {
+            transform: rotate(270deg);
+        }
+        svg:nth-child(2) {
+        }
+    }
+}
