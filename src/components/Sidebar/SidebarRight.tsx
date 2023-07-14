@@ -1,50 +1,71 @@
-import React, { useRef } from "react";
+import React from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
+import HeadphonesIcon from "@mui/icons-material/Headphones";
+import SettingsIcon from "@mui/icons-material/Settings";
 import AddIcon from "@mui/icons-material/Add";
+import "./Sidebar.scss";
+import SidebarChannels from "./SidebarChannels";
 
-const SidebarRight = () => {
-    const buttonRef = useRef<HTMLButtonElement>(null);
-    const onClickEvent = () => {
-        if (!buttonRef.current) return; // ④nullでないことを確かめる
-        let buttonInfo = buttonRef.current; // ⑤入力値取得
-        buttonInfo.classList.toggle("active");
-    };
+const Accordion = () => {
     return (
         <div className="sidebar_right">
+            <div className="right_header">
+                <h3>Channelタイトル</h3>
+                <ExpandMoreIcon />
+            </div>
+
             <div className="channel_box">
                 <div className="contents_box">
-                    <button className="contents_title" type="button" onClick={onClickEvent} ref={buttonRef}>
+                    <button className="contents_title">
                         <ExpandMoreIcon />
                         <h3>インフォメーション</h3>
                     </button>
                     <AddIcon />
                 </div>
-                <ul>
-                    <li>話そう</li>
-                    <li>話すな</li>
-                    <li>聞くな</li>
-                </ul>
+                <SidebarChannels />
+                <SidebarChannels />
+                <SidebarChannels />
             </div>
             <div className="channel_box">
                 <div className="contents_box">
-                    <button className="contents_title" type="button" onClick={onClickEvent} ref={buttonRef}>
+                    <button className="contents_title">
                         <ExpandMoreIcon />
                         <h3>テキストチャンネル</h3>
                     </button>
                     <AddIcon />
                 </div>
+                <SidebarChannels />
             </div>
             <div className="channel_box">
                 <div className="contents_box">
-                    <button className="contents_title" type="button" onClick={onClickEvent} ref={buttonRef}>
+                    <button className="contents_title">
                         <ExpandMoreIcon />
                         <h3>ボイスチャンネル</h3>
                     </button>
                     <AddIcon />
+                </div>
+                <SidebarChannels />
+            </div>
+
+            <div className="right_footer">
+                <div className="footer_myarea">
+                    <p className="server_icon">
+                        <img src="/images/image.man.png" alt="" />
+                    </p>
+                    <div className="right_myinfo">
+                      <p className="user_name">yamadar</p>
+                      <p>#202020</p>
+                    </div>
+                </div>
+                <div>
+                    <KeyboardVoiceIcon />
+                    <HeadphonesIcon />
+                    <SettingsIcon />
                 </div>
             </div>
         </div>
     );
 };
 
-export default SidebarRight;
+export default Accordion;

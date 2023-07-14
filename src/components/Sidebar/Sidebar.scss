@@ -2,14 +2,13 @@
     height: 100vh;
     display: flex;
     p {
-        color: red;
+        color: #8f9296;
     }
 }
 img {
     width: 100%;
     margin: 0 auto;
     display: block;
-    padding: 8px;
 }
 
 // 左側のサイドバー
@@ -24,32 +23,96 @@ img {
         background-color: gray;
         border-radius: 999px;
         width: 80%;
+        padding: 12px;
     }
 }
 
 // 右側のサイドバー
 .sidebar_right {
-    width: 300px;
+    width: 340px;
     background-color: #303137;
-    .contents_box {
-        color: rgb(164, 164, 164);
-        width: 95%;
+    overflow: scroll;
+    position: relative;
+    .right_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #000;
+        color: #fff;
+        height: 4rem;
+        padding: 0px 16px;
+    }
+    .channel_box {
+        margin-top: 18px;
+        .contents_box {
+            color: #8f9296;
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            .contents_title {
+                background-color: #303137;
+                color: #8f9296;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: pointer;
+            }
+            svg:nth-child(1) {
+                transform: rotate(270deg);
+            }
+            svg:nth-child(2):hover {
+                transition: 0.2s;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        h4 {
+            color: #8f9296;
+            font-size: 1.25rem;
+            margin-left: 1rem;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: 0.2s;
+            &:hover {
+                color: white;
+            }
+            .channel_hash {
+                margin-right: 0.65rem;
+            }
+        }
+    }
+    .right_footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 0.85rem;
-        .contents_title {
-            background-color: #303137;
-            color: rgb(164, 164, 164);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-top: 2px solid #000;
+        color: #8f9296;
+        height: 4rem;
+        .footer_myarea {
             display: flex;
-            justify-content: flex-start;
             align-items: center;
-            cursor: pointer;
+            .right_myinfo {
+                margin-left: 0.5rem;
+                .user_name {
+                    font-weight: bold;
+                    color: white;
+                    padding-bottom: 0.2em;
+                }
+            }
         }
-        svg:nth-child(1) {
-            transform: rotate(270deg);
+        .server_icon {
+            background-color: gray;
+            border-radius: 999px;
+            width: 40px;
+            padding: 8px;
         }
-        svg:nth-child(2) {
+        svg {
+            margin-right: 0.65em;
         }
     }
 }
